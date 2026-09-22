@@ -1,7 +1,7 @@
 {
   "name": "gate-crossex-panel",
   "private": true,
-  "version": "1.9.21-beta1",
+  "version": "1.9.22-beta1",
   "description": "GC Panel 本地桌面面板：行情首页 + 本机 API 资产与划转",
   "author": "gate-crossex-panel",
   "main": "electron/main.cjs",
@@ -48,7 +48,10 @@
       "category": "public.app-category.finance",
       "icon": "build/icon.icns",
       "identity": null,
-      "target": ["zip"]
+      "target": [
+        "zip"
+      ]
     }
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
