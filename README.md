@@ -1,22 +1,8 @@
 # GC Panel
 
-本地 Electron 面板。首页是交易终端布局，行情走公共推送。资产、划转和平仓用你自己的 Gate API Key / Secret 直接请求，不需要登录。
+本地 Gate CrossEx 面板。首页是交易终端布局，行情走公共推送。资产、划转和平仓用你自己的 Gate API Key / Secret 直接请求，不需要登录。
 
-## 启动
-
-```bash
-yarn
-yarn dev
-```
-
-## 打包
-
-```bash
-yarn build
-```
-
-产物在 `release/`：Apple Silicon 的 `.dmg` 和 `.zip`。没有开发者证书时会跳过签名，第一次打开需要在「隐私与安全性」里允许。
-
-## API 密钥
-
-右上角填写 Gate APIv4 的 Key 和 Secret。保存时用操作系统加密（macOS 钥匙串 / Windows DPAPI），密文只写在本机，界面之后只显示 Key 的末四位。
+# 强烈建议
+1. 用自己熟悉的AI工具做一遍源代码审查
+2. 尽可能自行编译安装包，安全性更有保障
+3. 开源软件没有任何保证，欢迎提PR，欢迎fork自己修改
