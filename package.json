@@ -1,0 +1,54 @@
+{
+  "name": "gate-crossex-panel",
+  "private": true,
+  "version": "1.9.21-beta1",
+  "description": "GC Panel 本地桌面面板：行情首页 + 本机 API 资产与划转",
+  "author": "gate-crossex-panel",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1 --port 5173\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "build": "yarn build:mac",
+    "build:mac": "tsc -p tsconfig.json --noEmit && vite build && electron-builder --mac --publish never && node scripts/make-dmg.cjs",
+    "build:win": "tsc -p tsconfig.json --noEmit && vite build && node scripts/build-win.cjs",
+    "start": "electron .",
+    "preview": "vite preview --host 127.0.0.1 --port 4173"
+  },
+  "dependencies": {
+    "lightweight-charts": "^4.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.5",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "local.gate.crossex.panel",
+    "productName": "GC Panel",
+    "asar": true,
+    "npmRebuild": false,
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "target": ["zip"]
+    }
+  }
+}
