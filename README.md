@@ -6,3 +6,9 @@
 1. 用自己熟悉的AI工具做一遍源代码审查
 2. 尽可能自行编译安装包，安全性更有保障
 3. 开源软件没有任何保证，欢迎提PR，欢迎fork自己修改
+
+### macOS arm64 系统报损坏，请执行以下命令：
+
+```
+xattr -dr com.apple.quarantine "/Applications/GC Panel.app"
+```
